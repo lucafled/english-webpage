@@ -1,22 +1,23 @@
 # Nexo · Clases de inglés
 
-Esta publicación convierte el contenido de la carpeta `plataforma-ingles` en una experiencia web estática navegable.
+Sitio estático para GitHub Pages que convierte la idea de `plataforma-ingles` en una experiencia pública, clara y navegable.
 
 ## Qué incluye
 
-- Landing pública inspirada en `src/app/page.tsx`.
-- Horarios disponibles inspirados en `src/app/calendario/page.tsx` y `CalendarioPublico`.
-- Flujos visuales de inicio de sesión y primer acceso.
-- Vista de alumno con próxima clase y agenda.
-- Panel de administración con agenda, calendario editable de demostración y alta de alumnos.
-- Mapa del proyecto original, sus rutas y las tablas de Supabase definidas en `supabase/schema.sql`.
+- Portada pública con propuesta de valor, modalidades y próximas opciones.
+- Catálogo de clases con búsqueda y filtros por nivel y modalidad.
+- Flujo local de reserva: los horarios elegidos se guardan en `localStorage` para probar el recorrido.
+- Espacio de alumno con próxima clase, progreso, agenda y vista de administración.
+- Biblioteca de recursos con búsqueda y guías abiertas en un diálogo accesible.
+- Acceso de demostración por rol y flujo visual de primer acceso.
+- Mapa del proyecto original y explicación de las capacidades que requieren backend.
 
 ## Nota de publicación
 
-La carpeta original es una aplicación Next.js con rutas de servidor, NextAuth y Supabase. GitHub Pages solo sirve archivos estáticos, así que esta edición conserva la interfaz y los flujos principales como demo navegable, sin fingir que el login o la base de datos están conectados. Para activar esas funciones de servidor, la aplicación original necesita desplegarse en un entorno Node compatible.
+GitHub Pages sirve archivos estáticos. Por eso login, Supabase, NextAuth, escritura de datos y enlaces reales de videollamada están claramente marcados como demo-only. La aplicación conectada original necesita un entorno Node compatible para activar esas funciones.
 
 ## Archivos publicados
 
-- `index.html` — estructura de la aplicación estática.
-- `styles.css` — diseño responsive y tokens visuales del proyecto.
-- `app.js` — navegación, datos de demostración e interacciones locales.
+- `index.html` — estructura semántica, navegación y metadatos SEO.
+- `styles.css` — sistema visual responsive, estados de foco y soporte para `prefers-reduced-motion`.
+- `app.js` — rutas hash, filtros, diálogo de recursos, roles demo y persistencia local.

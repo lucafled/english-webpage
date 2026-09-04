@@ -3,59 +3,64 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta
-      name="description"
-      content="Plataforma de clases de inglés con horarios, acceso para alumnos y herramientas para administrar la agenda."
-    />
-    <meta name="theme-color" content="#102a43" />
-    <title>Clases de inglés · Nexo</title>
+    <meta name="description" content="Nexo es una plataforma clara para organizar clases de inglés, horarios, recursos y seguimiento de alumnos." />
+    <meta name="theme-color" content="#f8f6f0" />
+    <meta property="og:title" content="Nexo · Clases de inglés" />
+    <meta property="og:description" content="Explora clases, consulta horarios y conoce el espacio de aprendizaje de Nexo." />
+    <title>Nexo · Clases de inglés</title>
     <link rel="stylesheet" href="styles.css" />
     <script src="app.js" defer></script>
   </head>
   <body>
-    <div class="app-shell">
-      <aside class="sidebar" aria-label="Navegación principal">
-        <div class="brand-lockup">
-          <div class="brand-mark" aria-hidden="true"><span>n</span></div>
-          <div>
-            <p class="brand-name">Nexo</p>
-            <p class="brand-caption">Clases de inglés</p>
-          </div>
-        </div>
+    <a class="skip-link" href="#main-content">Saltar al contenido</a>
 
-        <div class="sidebar-label">Espacio de trabajo</div>
-        <nav class="nav-list">
-          <button class="nav-item" data-view="inicio" type="button"><span class="nav-icon">⌂</span><span>Inicio</span></button>
-          <button class="nav-item" data-view="calendario" type="button"><span class="nav-icon">▦</span><span>Horarios</span></button>
-          <button class="nav-item" data-view="login" type="button"><span class="nav-icon">↗</span><span>Acceso alumno</span></button>
-          <button class="nav-item" data-view="primer-acceso" type="button"><span class="nav-icon">✦</span><span>Primer acceso</span></button>
-          <button class="nav-item" data-view="alumno" type="button"><span class="nav-icon">◉</span><span>Mi clase</span></button>
-          <button class="nav-item" data-view="admin" type="button"><span class="nav-icon">⌘</span><span>Administración</span></button>
-          <button class="nav-item" data-view="proyecto" type="button"><span class="nav-icon">◇</span><span>Proyecto</span></button>
+    <div class="site-shell">
+      <header class="site-header">
+        <a class="brand" href="#inicio" aria-label="Nexo, volver al inicio">
+          <span class="brand-mark" aria-hidden="true">N</span>
+          <span class="brand-copy"><strong>Nexo</strong><small>Clases de inglés</small></span>
+        </a>
+
+        <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="site-nav">
+          <span class="sr-only">Abrir menú</span>
+          <span></span><span></span><span></span>
+        </button>
+
+        <nav class="site-nav" id="site-nav" aria-label="Navegación principal">
+          <a href="#inicio" data-route="inicio">Inicio</a>
+          <a href="#clases" data-route="clases">Clases</a>
+          <a href="#espacio" data-route="espacio">Mi espacio</a>
+          <a href="#recursos" data-route="recursos">Recursos</a>
+          <a href="#proyecto" data-route="proyecto">Proyecto</a>
         </nav>
 
-        <div class="sidebar-footer">
-          <div class="secure-badge"><span class="status-dot"></span><span>Demo navegable</span></div>
-          <p>Una versión estática de la plataforma original de <strong>plataforma-ingles</strong>.</p>
+        <a class="header-login" href="#acceso" data-route="acceso">Acceder <span aria-hidden="true">↗</span></a>
+      </header>
+
+      <main id="main-content" tabindex="-1">
+        <div class="notice-bar">
+          <span class="notice-icon" aria-hidden="true">✦</span>
+          <p><strong>Edición estática para GitHub Pages.</strong> Login, Supabase y NextAuth están representados como demo navegable; no se guardan datos en un servidor.</p>
+          <a href="#proyecto" data-route="proyecto">Ver detalles <span aria-hidden="true">→</span></a>
         </div>
-      </aside>
 
-      <main class="main-content">
-        <header class="topbar">
-          <div>
-            <p class="topbar-kicker">Plataforma · <span id="current-section">Inicio</span></p>
-            <p class="topbar-subtitle">Aprender también puede sentirse simple.</p>
-          </div>
-          <div class="topbar-actions">
-            <span class="live-pill"><span class="pulse-dot"></span> Sitio publicado</span>
-            <button class="profile-chip" data-view="login" type="button" aria-label="Abrir acceso de alumno"><span class="profile-avatar">L</span><span>Mi acceso</span></button>
-          </div>
-        </header>
-
-        <div id="app" class="view-container" aria-live="polite"></div>
+        <div id="app" aria-live="polite"></div>
       </main>
+
+      <footer class="site-footer">
+        <div class="footer-main">
+          <div class="footer-brand"><span class="brand-mark small" aria-hidden="true">N</span><div><strong>Nexo</strong><span>Aprender inglés, paso a paso.</span></div></div>
+          <div class="footer-links"><a href="#clases" data-route="clases">Horarios</a><a href="#recursos" data-route="recursos">Recursos</a><a href="mailto:clases@nexo-ingles.example">Contacto</a></div>
+        </div>
+        <div class="footer-bottom"><span>© <span id="current-year"></span> Nexo · Demo estática</span><span>Diseñado para crecer con tu academia.</span></div>
+      </footer>
     </div>
 
-    <div id="toast" class="toast" role="status" aria-live="polite"></div>
+    <div class="toast" id="toast" role="status" aria-live="polite"></div>
+    <dialog class="resource-dialog" id="resource-dialog" aria-labelledby="resource-dialog-title">
+      <div class="dialog-head"><div><span class="eyebrow" id="resource-dialog-kicker">Guía</span><h2 id="resource-dialog-title">Recurso</h2></div><button class="icon-button" type="button" data-action="close-dialog" aria-label="Cerrar">×</button></div>
+      <div class="dialog-body" id="resource-dialog-body"></div>
+      <div class="dialog-actions"><button class="button button-primary" type="button" data-action="close-dialog">Listo</button></div>
+    </dialog>
   </body>
 </html>
