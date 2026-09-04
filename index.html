@@ -1,49 +1,61 @@
 <!doctype html>
-<html lang="en">
+<html lang="es-MX">
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta
       name="description"
-      content="A simple English webpage starter that you can edit and make your own."
+      content="Plataforma de clases de inglés con horarios, acceso para alumnos y herramientas para administrar la agenda."
     />
-    <title>English Webpage</title>
+    <meta name="theme-color" content="#102a43" />
+    <title>Clases de inglés · Nexo</title>
     <link rel="stylesheet" href="styles.css" />
+    <script src="app.js" defer></script>
   </head>
   <body>
-    <main class="page-shell">
-      <nav class="site-nav" aria-label="Main navigation">
-        <a class="brand" href="#top">English Webpage</a>
-        <a class="nav-link" href="#about">About</a>
-      </nav>
-
-      <section class="hero" id="top">
-        <p class="eyebrow">A place to begin</p>
-        <h1>Make your ideas clear, one word at a time.</h1>
-        <p class="intro">
-          Welcome to your new English webpage. Use this starter as a simple
-          home for your writing, projects, lessons, or anything you want to
-          share.
-        </p>
-        <a class="button" href="#about">Explore the page <span aria-hidden="true">→</span></a>
-      </section>
-
-      <section class="about-card" id="about">
-        <div>
-          <p class="eyebrow">Your next chapter</p>
-          <h2>Start with something simple.</h2>
+    <div class="app-shell">
+      <aside class="sidebar" aria-label="Navegación principal">
+        <div class="brand-lockup">
+          <div class="brand-mark" aria-hidden="true"><span>n</span></div>
+          <div>
+            <p class="brand-name">Nexo</p>
+            <p class="brand-caption">Clases de inglés</p>
+          </div>
         </div>
-        <p>
-          Edit the text in <code>index.html</code>, change the colors in
-          <code>styles.css</code>, and publish your updates whenever you are
-          ready.
-        </p>
-      </section>
 
-      <footer>
-        <span>Built for your ideas.</span>
-        <span>© 2026 English Webpage</span>
-      </footer>
-    </main>
+        <div class="sidebar-label">Espacio de trabajo</div>
+        <nav class="nav-list">
+          <button class="nav-item" data-view="inicio" type="button"><span class="nav-icon">⌂</span><span>Inicio</span></button>
+          <button class="nav-item" data-view="calendario" type="button"><span class="nav-icon">▦</span><span>Horarios</span></button>
+          <button class="nav-item" data-view="login" type="button"><span class="nav-icon">↗</span><span>Acceso alumno</span></button>
+          <button class="nav-item" data-view="primer-acceso" type="button"><span class="nav-icon">✦</span><span>Primer acceso</span></button>
+          <button class="nav-item" data-view="alumno" type="button"><span class="nav-icon">◉</span><span>Mi clase</span></button>
+          <button class="nav-item" data-view="admin" type="button"><span class="nav-icon">⌘</span><span>Administración</span></button>
+          <button class="nav-item" data-view="proyecto" type="button"><span class="nav-icon">◇</span><span>Proyecto</span></button>
+        </nav>
+
+        <div class="sidebar-footer">
+          <div class="secure-badge"><span class="status-dot"></span><span>Demo navegable</span></div>
+          <p>Una versión estática de la plataforma original de <strong>plataforma-ingles</strong>.</p>
+        </div>
+      </aside>
+
+      <main class="main-content">
+        <header class="topbar">
+          <div>
+            <p class="topbar-kicker">Plataforma · <span id="current-section">Inicio</span></p>
+            <p class="topbar-subtitle">Aprender también puede sentirse simple.</p>
+          </div>
+          <div class="topbar-actions">
+            <span class="live-pill"><span class="pulse-dot"></span> Sitio publicado</span>
+            <button class="profile-chip" data-view="login" type="button" aria-label="Abrir acceso de alumno"><span class="profile-avatar">L</span><span>Mi acceso</span></button>
+          </div>
+        </header>
+
+        <div id="app" class="view-container" aria-live="polite"></div>
+      </main>
+    </div>
+
+    <div id="toast" class="toast" role="status" aria-live="polite"></div>
   </body>
 </html>
